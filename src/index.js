@@ -9,7 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(breedUrl)
     .then((r) => r.json())
     .then((breeds) => addBreeds(breeds.message))
-    document.getElementById("breed-dropdown").addEventListener("change", (e) => {
+    breedDropdown = document.getElementById("breed-dropdown")
+    for(const letter of "abcdefghijklmnopqrstuvwxyz"){
+        let option = document.createElement("option")
+        option.textContent = letter
+        option.value = letter
+        breedDropdown.appendChild(option)
+    }
+    breedDropdown.addEventListener("change", (e) => {
         let breeds = document.querySelectorAll("ul#dog-breeds li")
         breeds.forEach((breedLI) => {
             if(breedLI.className !== e.target.value){
