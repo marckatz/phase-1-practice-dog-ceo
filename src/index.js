@@ -30,12 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
 }) 
 
 function addImages(imgs){
-    // imgs.forEach(image => {
-    //     let img = document.createElement("img")
-    //     img.src = image
-    //     document.getElementById("dog-image-container").appendChild(img)
-    // });
-    return 0
+    imgs.forEach(image => {
+        let img = document.createElement("img")
+        img.src = image
+        document.getElementById("dog-image-container").appendChild(img)
+    });
 }
 
 function addBreeds(breeds){
